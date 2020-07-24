@@ -59,11 +59,11 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     async function loadFoods(): Promise<void> {
-      const searchQuery = searchValue.split(' ').join('+');
+      // const searchQuery = searchValue.split(' ').join('+');
       const res = await api.get('foods', {
         params: {
           category_like: selectedCategory,
-          name_like: searchQuery,
+          name_like: searchValue,
         },
       });
       setFoods(res.data);
